@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DonutsComponent } from './Component/donuts/donuts.component';
 import { DonutDetailsComponent } from './Component/donut-details/donut-details.component';
 import { FamousPersonDetailComponent } from './Component/famous-person-detail/famous-person-detail.component';
+import { FamousPeopleComponent } from './Component/famous-people/famous-people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DonutsComponent,
     DonutDetailsComponent,
-    FamousPersonDetailComponent
+    FamousPersonDetailComponent,
+    FamousPeopleComponent
   ],
   imports: [
     BrowserModule,

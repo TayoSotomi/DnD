@@ -1,14 +1,5 @@
-<div *ngFor="let d of AllDonuts;">
-
-    <p>{{d.id}}</p>
-    <a routerLink="/donuts/{{d.id}}">{{d.name}}</a>
-    <img  src="{{d.photo}}" height="80"/>
-    
-    <p>{{d.photo_attribution}}</p>
-
-    
-
-
-
-</div>
+<h1>Donuts</h1>
+<ul >
+<li *ngFor="let d of Result.results" routerLink="/donuts/{{d.id}}">{{d.name}}</li> 
+</ul>
 

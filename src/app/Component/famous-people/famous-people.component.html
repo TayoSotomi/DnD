@@ -1,14 +1,2 @@
 
-
-<div *ngFor="let p of complete.Devs">
-    <P>{{p.FirstName}}</P>
-    <P>{{p.lastName}}</P>
-    <P>{{p.innovation}}</P>
-    <P>{{p.year}}</P>
-</div>
-
-<div *ngFpr="let t of tiny.Devs">
-    <P>{{t.name}}</P>
-    <P>{{t.invented}}</P>
-    <P>{{t.yea}}</P>
-</div>
+<app-famous-person-detail *ngFor="let d of result.complete" [person]="d"></app-famous-person-detail>

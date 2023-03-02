@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Donut } from 'src/app/Model/donut';
+import {  Donuts } from 'src/app/Model/donut';
 import { DonutsService } from 'src/app/Service/donuts.service';
 
 @Component({
@@ -9,14 +9,17 @@ import { DonutsService } from 'src/app/Service/donuts.service';
 })
 export class DonutsComponent {
 
+Result:Donuts ={} as Donuts;
+
   constructor(private donutService:DonutsService){
 
   }
 
-  AllDonuts:Donut[]=[];
-
   ngOnInit(){
-    this.AllDonuts = this.donutService.getAll();
+    this.donutService.GetDonuts().subscribe((response:Donuts)=>{
+      console.log(response);
+      this.Result = response;
+    });
   }
 
 }

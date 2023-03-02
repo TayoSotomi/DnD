@@ -14,7 +14,7 @@ constructor(private http:HttpClient) { }
 
   getDevs():Observable<Devs>{
 
-    return this.http.get<Devs>(`${this.url}`)
+    return this.http.get<Devs>(this.url)
   };
 
 }

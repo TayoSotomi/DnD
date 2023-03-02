@@ -1,1 +1,7 @@
-<p>famous-person-detail works!</p>
+
+<h3 (click)="toggleDispaly()">{{person.firstName}} {{ person.lastName}}</h3>
+<div *ngIf="dispaly">
+    <p>{{person.innovation}}</p>
+    <p>{{person.year}}</p>
+</div>
+

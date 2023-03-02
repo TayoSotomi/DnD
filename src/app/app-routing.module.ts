@@ -7,11 +7,7 @@ import { FamousPeopleComponent } from './Component/famous-people/famous-people.c
   const routes: Routes = [
     { path: 'donuts', component: DonutsComponent },
     { path: 'donuts/:id', component:DonutDetailsComponent },
-    { path: '', redirectTo: '/donuts', pathMatch:'full'},
-    
-
     { path: 'devs', component: FamousPeopleComponent },
-    { path: 'devs/:id', component:FamousPeopleComponent },
     { path: '', redirectTo: '/devs', pathMatch:'full'},
     
   ];

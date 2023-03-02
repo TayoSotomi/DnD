@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Donut } from 'src/app/Model/donut';
-import { DonutDetail } from 'src/app/Model/model.DonutDetail';
+import { Donuts, Donutsingle } from 'src/app/Model/donut';
+
 import { DonutsService } from 'src/app/Service/donuts.service';
 
 @Component({
@@ -10,16 +10,16 @@ import { DonutsService } from 'src/app/Service/donuts.service';
   styleUrls: ['./donut-details.component.css']
 })
 export class DonutDetailsComponent {
-  
+  result:Donutsingle = {} as Donutsingle;
 constructor(private route:ActivatedRoute, private donutService:DonutsService){}
 
-  ngOnInit(){
-    const routeParams = this.route.snapshot.paramMap;
-    let id:number = Number(routeParams.get("id"));
-    console.log(id);
+ ngOnInit(){
+ let paramMap = this.route.snapshot.paramMap;
+ let id:number =Number( paramMap.get("id"));
 
-    this.DisplayDonut = this.donutService.getByid(id);
-}
-DisplayDonut:DonutDetail = {} as DonutDetail;
-
+ this.donutService.GetDonutById(id).subscribe((response:Donutsingle)=>{
+  console.log(response);
+  this.result = response;
+ })
+ }
 }
